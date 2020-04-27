@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     # receiver login form, find user, add user id to session
     post '/login' do
         @user = User.find_by(username: params[:username])
-     #   if @user.authenticate(params[:username])
      if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id 
             redirect to "/users/#{@user.id}"
@@ -23,6 +22,18 @@ class UsersController < ApplicationController
 
     #render signup page 
     get '/signup' do 
+        erb :signup
+    end
+
+    post '/signup' do
+        if params[:email] == "" || params[:password] == "" || params[:username] == ""
+            redirect to '/signup'
+        else
+        user = User.create(email: params[:email], username: params[:username], password: params[:password]) 
+        user.save 
+        session[:user_id] = user.id 
+        redirect to "/users/#{user.id}"
+        end
     end
 
 end
