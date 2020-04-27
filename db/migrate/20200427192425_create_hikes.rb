@@ -5,6 +5,7 @@ class CreateHikes < ActiveRecord::Migration
       t.string :location
       t.string :difficulty
       t.float :rating
+      t.integer :user_id
       t.timestamps null: false
     end
   end
