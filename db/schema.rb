@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200427192808) do
+ActiveRecord::Schema.define(version: 20200427195032) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "content"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20200427192808) do
   end
 
   create_table "hikes", force: :cascade do |t|
-    t.string   "location"
+    t.string   "name"
     t.string   "difficulty"
     t.float    "rating"
     t.integer  "user_id"
