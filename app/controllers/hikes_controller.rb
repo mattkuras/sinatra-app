@@ -57,6 +57,8 @@ class HikesController < ApplicationController
     end
 
 
+    ### ----> this method is broken. fix it
+    
     get '/hikes/:username' do
         redirect_if
         user = User.find_by(id: session[:user_id])
