@@ -17,7 +17,7 @@ class HikesController < ApplicationController
         if params[:name] != "" && params[:rating] != "" && params[:difficulty] != "" 
             current_user.hikes << Hike.new(params)
        
-            redirect to '/myhikes'
+            redirect to '/hikes'
         else
             redirect to '/hikes/new'
         end
@@ -57,11 +57,11 @@ class HikesController < ApplicationController
     end
 
 
-    get '/myhikes' do
+    get '/hikes/user' do
         redirect_if
         user = User.find_by(id: session[:user_id])
         @hikes = user.hikes 
-        erb :'hikes/show_myhikes'
+        erb :'hikes/show_user_hikes'
     end
 
     delete '/hikes/:id/delete' do
