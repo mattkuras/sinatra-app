@@ -1,0 +1,7 @@
+<h1>Your Hikes</h1>
+
+<% @hikes.each do |hike| %>
+<h2> <%= hike.name %> </h2>
+<h3> Difficulty <%= hike.difficulty %> </h3>
+<h3> Rating <%= hike.rating %> </h3>
+<%end%>

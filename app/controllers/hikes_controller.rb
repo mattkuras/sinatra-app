@@ -30,8 +30,9 @@ class HikesController < ApplicationController
     end
 
     get '/myhikes' do
-        "here's your hikes"
-        #show hikes created by user 
+        user = User.find_by(id: session[:user_id])
+        @hikes = user.hikes 
+        erb :'hikes/show_myhikes'
     end
 
 end
