@@ -4,7 +4,7 @@ class HikesController < ApplicationController
         erb :'hikes/show_hikes'  
     end
 
-    get '/hike/:id' do
+    get '/hikes/:id' do
         #render show individual hike page 
     end
 
