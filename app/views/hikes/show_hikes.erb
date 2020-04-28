@@ -1,7 +1,7 @@
 <h1>The Hikes</h1>
 
 <% Hike.all.each do |hike| %>
-<h2> <%= hike.name %> </h2>
+<a href="/hikes/<%=hike.id%>/edit"> <h2> <%= hike.name %> </h2> </a>
 <h3> Difficulty <%= hike.difficulty %> </h3>
 <h3> Rating <%= hike.rating %> </h3>
 <%end%>

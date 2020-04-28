@@ -26,13 +26,19 @@ class HikesController < ApplicationController
     get '/hikes/:id' do
         redirect_if 
         @hike = Hike.find_by(id: params[:id])
+    #    binding.pry
         erb :'hikes/show_hike' 
     end
 
     get '/hikes/:id/edit' do
         redirect_if 
         @hike = Hike.find_by(id: params[:id])
+       # binding.pry
+        if @hike.user == current_user
         erb :'hikes/edit_hike' 
+        else
+            redirect to "/hikes/#{@hike.id}"
+        end
     end
 
     patch '/hikes/:id' do
@@ -60,8 +66,8 @@ class HikesController < ApplicationController
 
     delete '/hikes/:id/delete' do
          redirect_if
-         @hike = Hike.find_by(:id params[:id])
-         if @hike && @hike.user -- current_user
+         @hike = Hike.find_by(id: params[:id])
+         if @hike && @hike.user == current_user
             @hike.delete 
          else 
             redirect to '/hikes'

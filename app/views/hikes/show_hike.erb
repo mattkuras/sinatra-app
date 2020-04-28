@@ -2,3 +2,10 @@
 
 <h3> Difficulty <%= @hike.difficulty %> </h3>
 <h3> Rating <%= @hike.rating %> </h3>
+
+<form method="post" action="/hikes/<%=@hike.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Hike">
+</form>
+
+<a href="/hikes/<%=@hike.id%>/edit">Edit Hike </a>
