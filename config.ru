@@ -6,6 +6,7 @@ end
 
 use Rack::MethodOverride 
 
+use CommentsController
 use HikesController
 use UsersController
 run ApplicationController

@@ -1,8 +1,14 @@
 class CommentsController < ApplicationController
 
-    get '/comments/new' do
+    post '/comments/new' do
         redirect_if 
-        erb :'comments/new' 
+        if params[:content] == ""
+            redirect to '/hikes/:id'
+        else
+            @comment = Comment.create(params)
+            @comment.save 
+            redirect to "/hikes#{@comment.hike.id}"
+        end
     end
 
 end
