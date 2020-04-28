@@ -1,0 +1,12 @@
+<h2>edit</h2>
+
+<form action="/hikes/<%=@hike.id%>" method="post">
+<input id="hidden" type="hidden" name="_method" value="PATCH">
+<label for="name"> Name: </label>
+<input type="text" name="name" value="<%=@hike.name%>">
+<label for="difficulty"> Difficulty: </label>
+<input type="text" name="difficulty" value="<%=@hike.difficulty%>">
+<label for="rating"> Rating: </label>
+<input type="text" name="rating" value="<%=@hike.rating%>">
+<input type="submit" value="Submit">
+</form>

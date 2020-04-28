@@ -29,6 +29,13 @@ class HikesController < ApplicationController
         erb :'hikes/show_hike' 
     end
 
+    get '/hikes/:id/edit' do
+        redirect_if 
+        @hike = Hike.find_by(id: params[:id])
+        erb :'hikes/edit_hike' 
+    end
+
+
     get '/myhikes' do
         redirect_if
         user = User.find_by(id: session[:user_id])
