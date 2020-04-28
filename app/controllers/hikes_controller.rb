@@ -26,7 +26,8 @@ class HikesController < ApplicationController
     end
 
     get '/hikes/:id' do
-        #render show individual hike page 
+        @hike = Hike.find_by(id: params[:id])
+        erb :'hikes/show_hike' 
     end
 
     get '/myhikes' do
