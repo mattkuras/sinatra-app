@@ -17,6 +17,7 @@
 
 <form action="/comments/new" method="post">
 <label for="content"> </label>
+<input type="hidden" name="hike" value=<%="#{@hike.id}"%>>
 <input type="text" name="content">
 <input type="submit" value="Submit">
 </form>
