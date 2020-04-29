@@ -23,12 +23,7 @@ class HikesController < ApplicationController
         end
     end
 
-    get '/hikes/:username' do
-        redirect_if
-        @user = User.find_by(username: params[:username])
-        @hikes = @user.hikes 
-        erb :'hikes/show_user_hikes'
-    end
+   
 
     get '/hikes/:id' do
         redirect_if 

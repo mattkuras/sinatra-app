@@ -20,6 +20,13 @@ class UsersController < ApplicationController
         "show route"
     end
 
+    get '/user/:username' do
+        redirect_if
+        @user = User.find_by(username: params[:username])
+        @hikes = @user.hikes 
+        erb :'hikes/show_user_hikes'
+    end
+
     #render signup page 
     get '/signup' do 
         erb :signup
