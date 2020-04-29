@@ -1,8 +1,7 @@
 <a href="/hikes"><p>The Hikes</p></a>
 
 <h1> <%= @hike.name %> </h1>
-<p>created by <%=@hike.user.username%> </p>
-
+<p>created by <a href="/users/<%@hike.user.username%>"> <%="#{@hike.user.username}"%></a></p>
 <h3> Difficulty <%= @hike.difficulty %> </h3>
 <h3> Rating <%= @hike.rating %> </h3>
 
@@ -22,6 +21,7 @@
 <input type="submit" value="Submit">
 </form>
 
-<%Comment.all.each do |comment|%>
-<p><%= comment.content%></p>
+<% @hike.comments.each do |c| %>
+<%= c.user.username%>
+<%= c.content %>
 <%end%>
