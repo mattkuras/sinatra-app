@@ -5,10 +5,9 @@ class CommentsController < ApplicationController
         if params[:content] == ""
             redirect to '/hikes/:id'
         else
-            comment = Comment.create(params)
-            current_user.comments << comment 
-            binding.pry
-            redirect to "/hikes#{@comment.hike.id}"
+            @comment = Comment.create(params)
+            current_user.comments << @comment 
+            redirect to "/hikes"
         end
     end
 
