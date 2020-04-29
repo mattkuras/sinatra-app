@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
         else
             @comment = Comment.create(params)
             current_user.comments << @comment 
+            binding.pry
             redirect to "/hikes"
         end
     end

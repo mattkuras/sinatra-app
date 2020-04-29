@@ -17,11 +17,11 @@
 
 <form action="/comments/new" method="post">
 <label for="content"> </label>
-<%# <input type="hidden" name="hike" value=<%="#{@hike.id}"%> %>
+<input type="text" name="hike_id" value=<%="#{@hike.id}"%>>
 <input type="text" name="content">
 <input type="submit" value="Submit">
 </form>
 
-<%@hike.comments.all.each do |comment|%>
+<%Comment.all.each do |comment|%>
 <p><%= comment.content%></p>
 <%end%>

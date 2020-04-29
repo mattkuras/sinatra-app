@@ -23,6 +23,13 @@ class HikesController < ApplicationController
         end
     end
 
+    get '/hikes/:username' do
+        redirect_if
+        @user = User.find_by(username: params[:username])
+        @hikes = @user.hikes 
+        erb :'hikes/show_user_hikes'
+    end
+
     get '/hikes/:id' do
         redirect_if 
         @hike = Hike.find_by(id: params[:id])
@@ -57,12 +64,7 @@ class HikesController < ApplicationController
 
     ### ----> this method is broken. 
     
-    get '/hikes/:username' do
-        redirect_if
-        user = User.find_by(id: params[:username])
-        @hikes = user.hikes 
-        erb :'hikes/show_user_hikes'
-    end
+  
 
     delete '/hikes/:id/delete' do
          redirect_if
