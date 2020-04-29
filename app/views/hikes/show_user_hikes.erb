@@ -1,5 +1,5 @@
 <h1><%= "#{@user.username.capitalize}"%>'s Hikes</h1>
-
+<a href="/hikes"><p>The Hikes</p></a>
 <% @hikes.each do |hike| %>
 <h2> <%= hike.name %> </h2>
 <h3> Difficulty: <%= hike.difficulty %> </h3>
