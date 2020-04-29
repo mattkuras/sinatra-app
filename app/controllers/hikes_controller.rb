@@ -57,11 +57,11 @@ class HikesController < ApplicationController
     end
 
 
-    ### ----> this method is broken. fix it
+    ### ----> this method is broken. 
     
     get '/hikes/:username' do
         redirect_if
-        user = User.find_by(id: session[:user_id])
+        user = User.find_by(id: params[:username])
         @hikes = user.hikes 
         erb :'hikes/show_user_hikes'
     end
