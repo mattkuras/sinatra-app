@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
         else
             @comment = Comment.create(params)
             current_user.comments << @comment 
-            redirect to "/hikes"
+            redirect to "/hikes/#{@comment.hike.id}"
         end
     end
 

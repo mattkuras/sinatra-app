@@ -16,11 +16,8 @@ class UsersController < ApplicationController
         end
     end
 
-    get '/users/:id' do
-        "show route"
-    end
 
-    get '/user/:username' do
+    get '/users/:username' do
         redirect_if
         @user = User.find_by(username: params[:username])
         @hikes = @user.hikes 

@@ -10,8 +10,6 @@ class HikesController < ApplicationController
         erb :'hikes/new' 
     end
 
- 
-
     post '/hikes/new' do 
         redirect_if
         if params[:name] != "" && params[:rating] != "" && params[:difficulty] != "" 
@@ -55,10 +53,6 @@ class HikesController < ApplicationController
             end
         end
     end
-
-
-    ### ----> this method is broken. 
-    
   
 
     delete '/hikes/:id/delete' do
