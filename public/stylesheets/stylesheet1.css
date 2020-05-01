@@ -10,8 +10,17 @@ a {
 #comment-submit {
     position: relative;
     bottom: 45px;
-    height: 100px;
+    height: 30px;
     width: 100px;
     margin-left: 5px;
     border-radius: 5px;
+}
+
+#the-hikes {
+    position: relative;
+    left: 94%;
+}
+
+#delete-edit-hike-div {
+    display: block;
 }

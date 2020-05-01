@@ -1,16 +1,18 @@
-<a href="/hikes"><p>The Hikes</p></a>
+<a href="/hikes" id="the-hikes">The Hikes</a>
 
 <h1> <%= @hike.name %> </h1>
 <p>created by <a href="/users/<%@hike.user.username%>"> <%="#{@hike.user.username}"%></a></p>
 <h3> Difficulty <%= @hike.difficulty %> </h3>
 <h3> Rating <%= @hike.rating %> </h3>
 
+<div id="delete-edit-hike-div">
 <form method="post" action="/hikes/<%=@hike.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Hike">
 </form>
 
-<a href="/hikes/<%=@hike.id%>/edit">Edit Hike </a>
+<a href="/hikes/<%=@hike.id%>/edit" id="edit-hike-link">Edit Hike </a>
+</div>
 
 <h2>add a comment</h2>
 
