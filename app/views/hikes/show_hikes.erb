@@ -5,7 +5,7 @@
 <% Hike.all.each do |hike| %>
 <a href="/hikes/<%=hike.id%>"> <h2> <%= hike.name %> </h2> 
 <h3>-<%=hike.location%></h3> </a>
-<p> created by <a href="/user/<%=hike.user.username%>"><%= hike.user.username %> </p> </a>
+<p> created by <a href="/users/<%=hike.user.username%>"><%= hike.user.username %> </p> </a>
 <h3> Difficulty: <%= hike.difficulty %> </h3>
 <h3> Rating: <%= hike.rating %> </h3>
 <%end%>

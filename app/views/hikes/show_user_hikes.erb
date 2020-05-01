@@ -1,7 +1,22 @@
 <h1><%= "#{@user.username.capitalize}"%>'s Hikes</h1>
-<a href="/hikes"><p>The Hikes</p></a>
+<a href="/hikes"><p>Return to the Hikes</p></a>
 <% @hikes.each do |hike| %>
-<h2> <%= hike.name %> </h2>
-<h3> Difficulty: <%= hike.difficulty %> </h3>
-<h3> Rating: <%= hike.rating %> </h3>
+<h1> <%= hike.name %> </h1><h2><%=hike.location%></h2>
+<p>created by <a href="/users/<%hike.user.username%>"> <%="#{hike.user.username}"%></a></p>
+<h3> Difficulty <%= hike.difficulty %> </h3>
+<h3> Rating <%= hike.rating %> </h3>
+<div id="display-desciption">
+<%=hike.description%>
+</div>
+<br>
+<%if current_user == hike.user%>
+<div id="delete-edit-hike-div">
+<form method="post" action="/hikes/<%=hike.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Hike">
+</form>
+
+<a href="/hikes/<%=hike.id%>/edit" id="edit-hike-link">Edit Hike </a>
+</div>
+<%end%>
 <%end%>
