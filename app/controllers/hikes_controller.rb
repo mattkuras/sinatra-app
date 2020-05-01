@@ -23,9 +23,9 @@ class HikesController < ApplicationController
 
    
 
-    get '/hikes/:slug' do
+    get '/hikes/:id' do
         redirect_if 
-        @hike = Hike.find_by_slug(params[:slug])
+        @hike = Hike.find_by(id: params[:id])
         erb :'hikes/show_hike' 
     end
 

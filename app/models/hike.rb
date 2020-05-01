@@ -7,6 +7,6 @@ class Hike < ActiveRecord::Base
       end
     
       def self.find_by_slug(slug)
-        Hike.all.find{|hike| hike.slug = slug}
+        Hike.all.find{|hike| hike.slug == slug}
       end
 end

@@ -9,6 +9,7 @@
 <%=@hike.description%>
 </div>
 <br>
+<%if current_user == @hike.user%>
 <div id="delete-edit-hike-div">
 <form method="post" action="/hikes/<%=@hike.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
@@ -17,7 +18,7 @@
 
 <a href="/hikes/<%=@hike.id%>/edit" id="edit-hike-link">Edit Hike </a>
 </div>
-
+<%end%>
 <h2>add a comment</h2>
 
 <form action="/comments/new" method="post">
