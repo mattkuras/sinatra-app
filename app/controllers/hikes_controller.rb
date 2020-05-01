@@ -41,12 +41,12 @@ class HikesController < ApplicationController
 
     patch '/hikes/:id' do
         redirect_if
-        if params[:name] == "" || params[:rating] == "" || params[:difficulty] == "" 
+        if params[:name] == "" || params[:rating] == "" || params[:difficulty] == "" || params[:location] == "" || params[:description] == ""
             redirect to "/hikes/#{params[:id]}/edit"
         else
             @hike = Hike.find_by(id: params[:id]) 
             if @hike && @hike.user == current_user
-                @hike.update(name: params[:name], rating: params[:rating], difficulty: params[:difficulty])
+                @hike.update(name: params[:name], rating: params[:rating], difficulty: params[:difficulty], location: params[:location], description: params[:description])
                 redirect to "/hikes/#{@hike.id}" 
             else 
                 redirect to "/hikes"
