@@ -2,6 +2,8 @@ a {
     text-decoration: none;
 }
 
+/* view-hike-page */
+
 #comment-input {
     height: 100px;
     width: 500px;
@@ -23,4 +25,19 @@ a {
 
 #delete-edit-hike-div {
     display: block;
+}
+
+/* new hike page */
+
+#create-hike-submit {
+    position: relative;
+    left: 70%;
+    bottom: 55px;
+    height: 30px;
+    width: 100px;
+}
+
+#new-hike-description-label {
+    position: relative;
+    bottom: 148px;
 }
