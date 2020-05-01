@@ -1,10 +1,11 @@
 <h1>The Hikes</h1>
-
-<a href="/hikes/new"><h3>Create Hike</h3></a>
-<a href="/users/<%=current_user.username%>"><h3>My Hikes</h3></a>
+<a href="/users/<%=current_user.username%>" id="my-hikes-link"><h3>My Hikes</h3></a>
+<a href="/logout" ><h3 id="logout-link">logout</h3></a>
+<a href="/hikes/new" id="create-hike-link"><h3>Create a Hike!</h3></a>
 <% Hike.all.each do |hike| %>
-<a href="/hikes/<%=hike.id%>"> <h2> <%= hike.name %> </h2> </a>
-<a href="/user/<%=hike.user.username%>"> <p> <%= hike.user.username %> </p> </a>
+<a href="/hikes/<%=hike.id%>"> <h2> <%= hike.name %> </h2> 
+<h3>-<%=hike.location%></h3> </a>
+<p> created by <a href="/user/<%=hike.user.username%>"><%= hike.user.username %> </p> </a>
 <h3> Difficulty: <%= hike.difficulty %> </h3>
 <h3> Rating: <%= hike.rating %> </h3>
 <%end%>

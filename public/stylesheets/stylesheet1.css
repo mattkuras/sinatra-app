@@ -42,3 +42,21 @@ a {
     position: relative;
     bottom: 148px;
 }
+
+/* The Hikes page */
+
+#my-hikes-link {
+    position: relative;
+    left: 94%;
+    bottom: 88px;
+}
+#logout-link {
+    position: relative;
+    left: 94%;
+    bottom: 88px;
+}
+
+#create-hike-link {
+    position: relative;
+    bottom: 30px;
+}
