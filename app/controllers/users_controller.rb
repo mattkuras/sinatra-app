@@ -4,6 +4,8 @@ class UsersController < ApplicationController
     get '/login' do 
         erb :login
     end
+    
+    
 
     # receiver login form, find user, add user id to session
     post '/login' do
@@ -39,5 +41,15 @@ class UsersController < ApplicationController
         redirect to "/hikes"
         end
     end
+
+    get '/logout' do
+        if logged_in?
+            session.destroy
+            redirect to '/login'
+        else
+        redirect to '/login'
+        end
+    end
+
 
 end
