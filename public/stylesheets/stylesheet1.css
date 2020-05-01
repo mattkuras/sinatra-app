@@ -21,6 +21,7 @@ a {
 #the-hikes {
     position: relative;
     left: 94%;
+    bottom: 10%;
 }
 
 #delete-edit-hike-div {
