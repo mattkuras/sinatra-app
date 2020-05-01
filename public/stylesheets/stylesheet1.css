@@ -1,0 +1,17 @@
+a {
+    text-decoration: none;
+}
+
+#comment-input {
+    height: 100px;
+    width: 500px;
+}
+
+#comment-submit {
+    position: relative;
+    bottom: 45px;
+    height: 100px;
+    width: 100px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
