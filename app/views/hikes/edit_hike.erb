@@ -4,9 +4,20 @@
 <input id="hidden" type="hidden" name="_method" value="PATCH">
 <label for="name"> Name: </label>
 <input type="text" name="name" value="<%=@hike.name%>">
+<br>
+<br>
+<label for="location"> Location: </label>
+<input type="text" name="location" value="<%=@hike.location%>">
+<br>
+<br>
 <label for="difficulty"> Difficulty: </label>
 <input type="text" name="difficulty" value="<%=@hike.difficulty%>">
+<br>
+<br>
 <label for="rating"> Rating: </label>
 <input type="text" name="rating" value="<%=@hike.rating%>">
+<br>
+<br>
+<input name="description" value="<%=@hike.description%>" id="" cols="75" rows="10">
 <input type="submit" value="Submit">
 </form>
