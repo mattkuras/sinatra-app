@@ -1,5 +1,6 @@
 <a href="/hikes" id="the-hikes">The Hikes</a>
-
+<a href="/users/<%=current_user.username%>" id="my-hikes-link"><h3>My Hikes</h3></a>
+<a href="/logout" ><h3 id="logout-link">logout</h3></a>
 <h1> <%= @hike.name %> </h1><h2><%=@hike.location%></h2>
 <p>created by <a href="/users/<%=@hike.user.username%>"> <%="#{@hike.user.username}"%></a></p>
 <h3> Difficulty: <%= @hike.difficulty %> </h3>

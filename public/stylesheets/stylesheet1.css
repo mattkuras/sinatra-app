@@ -45,12 +45,12 @@ a {
 
 /* The Hikes page */
 
-#my-hikes-link {
+.my-hikes-link {
     position: relative;
     left: 94%;
-    bottom: 88px;
+    bottom: 68px;
 }
-#logout-link {
+.logout-link {
     position: relative;
     left: 94%;
     bottom: 88px;

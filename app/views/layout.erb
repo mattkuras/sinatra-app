@@ -15,7 +15,11 @@
     <link rel="stylesheet" href="/stylesheets/stylesheet1.css" />
   </head>
   <body>
-
+  <%if logged_in?%>
+  <a href="/users/<%=current_user.username%>" id="my-hikes"><h3>My Hikes</h3></a>
+  <a href="/logout" ><h3 id="logout">Logout</h3></a>
+  <a href="/hikes" id="hikes"><h3>The Hikes</h3></a>
+<%end%>
     <div class="wrapper">
 
         <%= yield %>
