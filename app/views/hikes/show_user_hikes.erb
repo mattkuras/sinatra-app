@@ -1,7 +1,7 @@
 <h1><%= "#{@user.username.capitalize}"%>'s Hikes</h1>
 <a href="/hikes"><p>Return to the Hikes</p></a>
 <% @hikes.each do |hike| %>
-<h1> <%= hike.name %> </h1><h2><%=hike.location%></h2>
+<a href="/hikes/<%=hike.id%>"> <h1> <%= hike.name %> </h1><h2><%=hike.location%></h2> </a>
 <p>created by <a href="/users/<%hike.user.username%>"> <%="#{hike.user.username}"%></a></p>
 <h3> Difficulty: <%= hike.difficulty %> </h3>
 <h3> Rating: <%= hike.rating %> </h3>

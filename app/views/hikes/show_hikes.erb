@@ -1,7 +1,5 @@
 <h1>The Hikes</h1>
-<a href="/users/<%=current_user.username%>" id="my-hikes-link"><h3>My Hikes</h3></a>
-<a href="/logout" ><h3 id="logout-link">logout</h3></a>
-<a href="/hikes/new" id="create-hike-link"><h3>Create a Hike!</h3></a>
+<a href="/hikes/new" ><h3 id="create-hike-link">Create a Hike!</h3></a>
 <% Hike.all.each do |hike| %>
 <a href="/hikes/<%=hike.id%>"> <h2> <%= hike.name %> </h2> 
 <h3>-<%=hike.location%></h3> </a>
